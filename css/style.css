@@ -1,0 +1,622 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 60px 0;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+:root {
+    --main-color: #ce1212;
+    --second-color: #eee;
+    --first-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --second-font: inter;
+    --third-font: "Amatic SC";
+
+}
+
+
+/* nav style */
+.nav {
+    position: fixed;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 20px 0;
+}
+
+.nav-icon i {
+    padding-left: 20px;
+}
+
+.nav-links {
+    display: none;
+}
+
+h1 {
+    color: #212529;
+    font-family: var(--first-font);
+    font-weight: 700;
+    font-size: 30px;
+}
+
+h1::after {
+    content: ".";
+    color: var(--main-color)
+}
+
+
+/* home style */
+.home {
+    background-color: var(--second-color);
+}
+
+.home .container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .home-item img {
+    width: 100%;
+}
+
+.home .home-item img:hover {
+    animation: image-move .4s infinite;
+}
+
+@keyframes image-move {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(-2px, -2px);
+    }
+
+    50% {
+        transform: translate(2px, 2px);
+    }
+
+    75% {
+        transform: translate(-2px, 2px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.home-item {
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.home-item h2 {
+    font-family: var(--third-font);
+    font-weight: 700;
+    font-size: 65px;
+    line-height: normal;
+    color: rgb(55, 55, 63);
+    padding: 20px 0;
+}
+
+.home-item p {
+    font-family: var(--first-font);
+    font-weight: 400;
+    line-height: 26px;
+    color: rgb(79, 79, 90);
+    padding: 20px 0;
+}
+
+.home-item button {
+    font-family: var(--first-font);
+    font-weight: 400;
+    font-size: 15px;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 30px;
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 50px; 
+}
+
+.home-item button:hover {
+    background-color: red;
+}
+
+/* header style for all section */
+.header {
+    text-align: center;
+    padding: 30px;
+}
+
+.header p {
+    font-family: var(--second-font);
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(127, 127, 144);
+}
+
+.header h2 {
+    font-family: var(--third-font);
+    font-size: 50px;
+    font-weight: 400;
+    color: rgb(33, 37, 41);
+}
+
+.header h2 span {
+    color: rgb(206, 18, 18);
+}
+
+
+
+/* chefs section style */
+.chef-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    padding: 13px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+}
+
+.card .inner {
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(248, 248, 248, 1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    padding-top: 20px;
+    font-family: var(--second-font);
+    font-size: 19px;
+    font-weight: 700;
+    color: rgb(33, 37, 41);
+}
+
+.card p {
+    padding: 20px 0;
+    font-family: var(--first-font);
+    font-weight: 400;
+    font-size: 15px;
+    font-style: italic;
+    color: rgb(127, 127, 144);
+}
+
+.card span {
+    font-style: normal;
+    font-size: 14px;
+}
+
+.card:hover {
+    transform: scale(1.07);
+}
+
+.social {
+    background-color: rgba(248, 248, 248, .2);
+    position: absolute;
+    top: 40px;
+    right: -100px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    opacity: 0;
+    transition: right 1s 1s, opacity 1s 1s;
+}
+
+.social li {
+    padding: 15px;
+    color: rgba(0, 0, 0, 0.2);
+    transition: opacity 1s;
+}
+
+.card:hover .social {
+    right: 30px;
+    opacity: 1;
+}
+
+.card .social i:hover {
+    color: black;
+}
+
+
+
+/* gallery section style */
+.gallery {
+    background-color: var(--second-color);
+}
+
+.gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    padding: 10px;
+}
+
+.gallery-item .inner {
+    border: solid 5px white;
+    overflow: hidden;
+    position: relative; 
+}
+
+.gallery-item .inner img {
+    width: 100%;
+    display: block;
+}
+
+.gallery-images .inner .text p{
+    font-family: var(--first-font);
+    font-weight: 400;
+    color: rgb(221, 221, 221);
+}
+.gallery-images .inner .text h2 {
+    font-family: var(--second-font);
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+}
+.gallery-images .inner .text{
+    text-align: center; 
+    padding: 150px 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    bottom: 0; 
+    opacity: 0; 
+    transform: translateY(100%); 
+    transition: opacity 0.3s ease; 
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+.gallery-images .inner:hover .text{
+    opacity: 1;
+    transform: translateY(0);
+} 
+    
+
+
+
+/* contact section style */
+.contact iframe {
+    margin-bottom: 20px;
+}
+
+.contact .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contact .contact-info .item {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: var(--second-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contact .contact-info .icon {
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact .contact-info .content {
+    padding-left: 10px;
+}
+
+.contact .contact-info .content h4 {
+    font-family: var(--second-font);
+    font-size: 20px;
+    font-weight: 700;
+    color: rgb(125, 125, 125);
+    padding-bottom: 5px;
+}
+
+.contact .contact-info .content p {
+    font-family: var(--first-font);
+    font-weight: 400;
+    color: rgb(33, 37, 41);
+}
+
+.contact-info .content span {
+    font-weight: 700;
+}
+
+.contact .your-info {
+    box-shadow: 0 0 15px rgb(232, 230, 230);
+    padding: 10px;
+}
+
+.contact .your-info form {
+    text-align: center;
+}
+
+.contact .your-info .info-input {
+    width: 100%;
+    border: 2px solid var(--second-color);
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.contact .your-info .info-input:focus {
+    border-color: var(--main-color);
+    outline: none;
+}
+
+.contact .your-info button {
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    color: #fff;
+    background-color: var(--main-color);
+}
+
+.contact .your-info button:hover {
+    background-color: red;
+}
+
+
+/* Mealify */
+.mealify {
+    background-color: #080607;
+    color: #fff;
+}
+
+.mealify h1 {
+    color: #fff;
+}
+
+.mealify .desc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.mealify p {
+    margin: 15px 0;
+    font-family: var(--first-font);
+    font-weight: 400;
+}
+
+.mealify h3 {
+    margin: 15px 0;
+    font-family: var(--second-font);
+    font-weight: 700;
+    font-size: 19px;
+}
+
+.mealify .info,
+.mealify .last,
+.mealify .subscribe {
+    padding: 15px;
+}
+
+.mealify .desc-img {
+    width: 60px;
+    padding-right: 15px;
+}
+
+.mealify .desc-img img {
+    width: 100%;
+}
+
+.mealify .social1 {
+    text-align: center;
+}
+
+.mealify .social1 h3 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #5b5a5a;
+}
+
+.mealify .social1 i {
+    padding: 10px 30px;
+}
+
+.subscribe input,
+.subscribe button {
+    border: none;
+    width: 100%;
+    padding: 10px 5px;
+    margin-bottom: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.subscribe input {
+    color: #cecfce;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.subscribe button {
+    color: #fff;
+    background-color: var(--main-color);
+    font-size: 15px;
+}
+
+.subscribe .quick {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subscribe .quick .item {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.subscribe .quick .item i {
+    rotate: 90deg;
+    margin-right: 5px;
+}
+
+.last i {
+    color: var(--main-color);
+    padding-right: 10px;
+}
+
+.last .item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+
+
+@media (min-width: 768px) {
+    .contact .contact-info .item {
+        width: calc(100% /2 - 10px);
+        margin-left: 10px;
+    }
+
+    /* last section */
+    .mealify .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .mealify .subscribe {
+        width: 100%;
+        order: 3;
+    }
+
+    .mealify .last,
+    .mealify .info {
+        width: 50%;
+    }
+
+    .mealify .info {
+        order: 1;
+    }
+
+    .mealify .last {
+        order: 2;
+    }
+
+    .mealify .social1 i {
+        padding: 10px 10px;
+    }
+
+}
+
+
+/* big screen style */
+@media (min-width:1024px) {
+
+    /* navbar */
+    .nav-icon .bar {
+        display: none;
+    }
+
+    .nav-links {
+        display: block;
+    }
+
+    .nav-links li {
+        list-style: none;
+        display: inline;
+        padding: 0 10px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #7f7f90;
+        font-family: system-ui;
+        font-size: 17px;
+        font-weight: 600;
+        position: relative;
+    }
+
+    .nav-links a::before {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0px;
+        height: 2px;
+        background-color: var(--main-color);
+        transition: width 0.5s ease;
+    }
+
+    .nav-links a:hover::before {
+        width: 100%;
+    }
+
+    .nav-links .li-home a::before {
+        width: 100%;
+    }
+
+
+    /* home */
+    .home .container {
+        justify-content: space-between;
+        height: 100vh;
+    }
+
+    .home-item {
+        width: 40%;
+        text-align: start;
+    }
+
+    .home-item img {
+        width: 70%;
+    }
+
+    /* last section */
+    .mealify .subscribe {
+        width: 50%;
+    }
+
+    .mealify .last,
+    .mealify .info {
+        width: 25%;
+    }
+}
