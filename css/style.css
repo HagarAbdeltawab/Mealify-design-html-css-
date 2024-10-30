@@ -21,6 +21,11 @@ body {
     align-items: center;
     justify-content: center;
 }
+.flex-colum{
+    display: flex;                
+    flex-direction: column;     
+    width: 33% ;   
+}
 
 :root {
     --main-color: #ce1212;
