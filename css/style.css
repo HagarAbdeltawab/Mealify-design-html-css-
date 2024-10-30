@@ -188,6 +188,7 @@ h1::after {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    
 }
 
 .card {
